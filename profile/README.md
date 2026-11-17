@@ -1,4 +1,4 @@
-[🇧🇷 Português brasileiro](https://github.com/strateo/.github/blob/main/profile/README.md) | [🇺🇸 English](https://github.com/strateo/.github/blob/main/profile/README.en-US.md)
+[🇧🇷 PT-BR](https://github.com/strateo/.github/blob/main/profile/README.md) | [🇺🇸 EN-US](https://github.com/strateo/.github/blob/main/profile/README.en-US.md)
 
 # Strateo
 
