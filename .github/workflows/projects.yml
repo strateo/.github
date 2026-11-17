@@ -1,0 +1,47 @@
+name: Update public projects
+
+on:
+  schedule:
+    # Sunday 22:00 in America/Sao_Paulo (Monday 01:00 UTC).
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/**
+      - .github/workflows/projects.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-public-projects
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.repository == 'strateo/.github'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Check out public profile
+        run: git clone --depth 1 --branch main https://github.com/strateo/.github.git .
+      - name: Test project updater
+        run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
+      - name: Refresh public projects
+        run: python3 scripts/update_projects.py
+      - name: Publish changed sections
+        run: |
+          git diff --check
+          git add profile/README.md profile/README.en-US.md
+          if git diff --cached --quiet; then
+            echo 'Public projects are already up to date.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'docs: refresh public Strateo projects'
+          git -c 'credential.helper=!gh auth git-credential' push origin HEAD:main

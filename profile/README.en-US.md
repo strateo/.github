@@ -18,7 +18,9 @@ Our method combines **field diagnosis → routines and cadence → indicators an
 
 ## Open source
 
+<!-- PROJECTS:START -->
 - 🧾 **[nfse](https://github.com/strateo/nfse)** — A Python client for issuing, querying, and canceling Brazilian service invoices (NFS-e) under the national standard. Early-stage software; see the repository for requirements and limitations.
+<!-- PROJECTS:END -->
 
 ## Get in touch
 
