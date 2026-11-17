@@ -19,7 +19,7 @@ Nosso método combina **diagnóstico de campo → rotinas e cadência → indica
 ## Código aberto
 
 <!-- PROJECTS:START -->
-- 🧾 **[nfse](https://github.com/strateo/nfse)** — Cliente Python para emissão, consulta e cancelamento de NFS-e no Padrão Nacional. Projeto em estágio inicial de desenvolvimento; consulte os requisitos e limites no repositório.
+- **[nfse](https://github.com/strateo/nfse)** — Cliente Python para emissão, consulta e cancelamento de NFS-e no Padrão Nacional. Projeto em estágio inicial de desenvolvimento; consulte os requisitos e limites no repositório.
 <!-- PROJECTS:END -->
 
 ## Vamos conversar
